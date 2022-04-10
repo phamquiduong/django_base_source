@@ -1,0 +1,11 @@
+django:
+  container_name: ${COMPOSE_PROJECT_NAME}_django
+  build: .
+  command: bash -c "python manage.py makemigrations main && python manage.py migrate && python manage.py runserver 0.0.0.0:80"
+  volumes:
+    - .:/code
+  ports:
+    - "80:80"
+  env_file:
+      - ./.env
+  restart: always
