@@ -1,19 +1,22 @@
-# Init-source-Django
-Docker &amp; Django-Sqlite3
+## Config env file
+- Copy `env.example` file to `.env`
+- Update value in `.env` file
 
-# Config env file
-- Copy env.example file to .env
-- Update value in .env file
+Note: `.env` file can include constance for Django system
 
-# PIP
-- You can list install python package in requirements.txt file
+## PIP
+- You can list install python package in `requirements.txt` file
 
-# Start project
+## Start project
 ```bash
+# Cd to docker folder
+cd docker
+
+# Build and Run docker in one command
+docker-compose up --build -d
+
 # Build and install library
 docker-compose build
-
-
 
 # Run server
 docker-compose up
@@ -22,4 +25,4 @@ docker-compose up
 docker-compose up -d
 ```
 
-# Thank you so much
+## Thank you so much
