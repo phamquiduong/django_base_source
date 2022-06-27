@@ -1,11 +1,11 @@
 ## Config env file
-- Copy `env.example` file to `.env`
+- Copy `docker/env.example` file to `docker/.env`
 - Update value in `.env` file
 
 Note: `.env` file can include constance for Django system
 
 ## PIP
-- You can list install python package in `requirements.txt` file
+- You can list install python package in `docker/requirements.txt` file
 
 ## Start project
 ```bash

@@ -1,15 +1,17 @@
-version: "2.3"
+version: "3.8"
 services:
   django:
     build:
       context: ../
       dockerfile: docker/Dockerfile-django
-    command: bash -c "python manage.py migrate &&
-                      python manage.py runserver 0.0.0.0:80"
+    command: bash -c "cd code/src &&
+                      python manage.py makemigrations main &&
+                      python manage.py migrate &&
+                      python manage.py runserver 0.0.0.0:8000"
     volumes:
       - ..:/code
     ports:
-      - "80:80"
+      - ${DJANGO_PORT}:8000
     env_file:
-        - ../.env
+        - ./.env
     restart: always
